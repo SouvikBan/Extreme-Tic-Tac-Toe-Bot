@@ -35,9 +35,9 @@ class TEAM46:
     def block_pattern_check(self, block, array, flag):
         #array - every winning pattern in patterns[]
         flagCount = 0
-		for pos in array:
-			if block[pos[0]][pos[1]] == flag:
-				flagCount += 1
+        for pos in array:
+            if block[pos[0]][pos[1]] == flag:
+                flagCount += 1
                 #1/3 will have only cell contribution written in Block_heuristics
 			elif block[pos[0]][pos[1]] == self.oppFlag(flag):
                 #if opponent's flag is present, discard

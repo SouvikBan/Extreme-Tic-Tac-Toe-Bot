@@ -2,7 +2,7 @@ import sys
 
 class TEAM46:
     def __init__(self):
-        self.cell_weight  = (3,2,3,2,3,2,3,2,3)
+        self.position_weight  = (3,2,3,2,3,2,3,2,3)
         self.boardHeuristics = {}                          
         self.blockHeuristics = {}
         self.who = 'MaxPlayer'
@@ -15,14 +15,21 @@ class TEAM46:
 
 
     def board_heuristics(self,board):
-        return 1
+        #partial board = 1.125* sum if 1, 2.25*sum if 2 , for 3 game over won
+        #sum is sum of block values involved in the incomplete pattern = 1/8 * 1/4 * block_heuristics * position_weight    
+        pass
     
-    def block_heuristics(self, block): #block won = 20, block lost = -1, partial block = cell weight(1)/2*maximum cell weight(2)
+    def block_heuristics(self, block):
+        #block won = 20, block lost = -1, partial block = cell weight(1)/2*maximum cell weight(2)
+        block_heuristic_value = 0
+
+        if block_pattern_check == 2:
+
         if self.block_pattern_check(block):
-            self.blockHeuristics = {1} 
+             
     
     def cell_heuristics(self,index): #1/8 of cell_weight
-        return self.cell_weight[index]
+        return (self.position_weight[index]/8)
 
 
 

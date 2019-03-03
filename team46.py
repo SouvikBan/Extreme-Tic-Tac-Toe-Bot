@@ -29,23 +29,24 @@ class TEAM46:
 		# NOT operation on flag
 		return 'o' if flag == 'x' else 'x'
 
-    def board_pattern_check(self, blockHeurs, arr):
+    def board_pattern_check(self, blockHeurs, array):
+        #array - every winning pattern in patterns[]
         playerCount = 0
         patternHeur = 0
-        for pos in pos_arr:
+        for pos in array:
 			val = blockHeurs[pos[0]][pos[1]]
             #blockHeurs is the value/score of a block that we calculated in block_pattern_check
-			patternHeur += val
-			if val < 0:
-				return 0
-			elif val == self.blockPoints:
-				playerCount+=1
+            patternHeur += val
+            if val < 0:
+                return 0
+            elif val == self.blockPoints:
+                playerCount+=1
         
         multiplier = 1 #when zero block won by us - included in block contribution in board_heuristics
-		if playerCount == 2: #
-			multiplier = #calculate
-		elif playerCount == 3:
-			multiplier = #big number because WON
+        if playerCount == 2: #
+            multiplier = #calculate
+        elif playerCount == 3:
+            multiplier = #big number because WON
 
 		return multiplier * patternHeur
         # pass

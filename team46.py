@@ -29,8 +29,26 @@ class TEAM46:
 		# NOT operation on flag
 		return 'o' if flag == 'x' else 'x'
 
-    def board_pattern_check(self,board,flag):
-        pass
+    def board_pattern_check(self, blockHeurs, arr):
+        playerCount = 0
+        patternHeur = 0
+        for pos in pos_arr:
+			val = blockHeurs[pos[0]][pos[1]]
+            #blockHeurs is the value/score of a block that we calculated in block_pattern_check
+			patternHeur += val
+			if val < 0:
+				return 0
+			elif val == self.blockPoints:
+				playerCount+=1
+        
+        multiplier = 1 #when zero block won by us - included in block contribution in board_heuristics
+		if playerCount == 2: #
+			multiplier = #calculate
+		elif playerCount == 3:
+			multiplier = #big number because WON
+
+		return multiplier * patternHeur
+        # pass
     
     def block_pattern_check(self, block, array, flag):
         #array - every winning pattern in patterns[]
@@ -50,18 +68,21 @@ class TEAM46:
 
 
     def board_heuristics(self,board):
-        #call pattern check with every pattern in patterns[] after which give cell contribution
+        # give boardHeurs for 1 block
         #partial board = 1.125* sum if 1, 2.25*sum if 2 , for 3 game over won
         #sum is sum of block values involved in the incomplete pattern = 1/8 * 1/4 * block_heuristics * position_weight    
         pass
     
     def block_heuristics(self, block):
+        #call pattern check with every pattern in patterns[] after which give cell contribution in blockHeurs
         #block won = 20, block lost = -1, partial block = cell weight(1)/2*maximum cell weight(2)
         block_heuristic_value = 0
 
         if block_pattern_check == 2:
 
         if self.block_pattern_check(block):
+
+        #return blockHeurs
              
     
     def cell_heuristics(self,index): #1/8 of weight_position

@@ -6,7 +6,7 @@ class TEAM46:
         self.boardHeuristics = {}                          
         self.blockHeuristics = {}
         self.who = 'MaxPlayer' #flag='x'
-        self.blockPoints = 30 #number of points if a block is won by us 
+        self.blockPoints = 30 #number of points if a block is won by us
 		patterns = [] #winning patterns in block - will cotain position of flags in the winning pattern.
 
         #vertical and horiz patterns
@@ -38,12 +38,12 @@ class TEAM46:
 		for pos in array:
 			if block[pos[0]][pos[1]] == flag:
 				flagCount += 1
-            #1/3 will have only cell contribution written in Block_heuristics
+                #1/3 will have only cell contribution written in Block_heuristics
 			elif block[pos[0]][pos[1]] == self.oppFlag(flag):
                 #if opponent's flag is present, discard
 				return 0
 		if flagCount == 2:
-			#ƒ2/3 of pattern complete. some points awarded for this
+			#2/3 of pattern complete. somepoints awarded for this
 			return somepoints #calculate somepoints 
 		return 0
         # pass

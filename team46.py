@@ -64,7 +64,7 @@ class TEAM46:
         if self.block_pattern_check(block):
              
     
-    def cell_heuristics(self,index): #1/8 of cell_weight
+    def cell_heuristics(self,index): #1/8 of weight_position
         return (self.position_weight[index]/8)
 
 
@@ -98,5 +98,7 @@ class TEAM46:
                 return bestVal
 
    
-    
+    def Move(self,board, old_move, flag):
+
+        
     

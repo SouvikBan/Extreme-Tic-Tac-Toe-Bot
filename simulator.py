@@ -9,7 +9,7 @@ Naming convention followed across the simulator is:
 - small_board[i] = cell[0] + cell[1] + cell[2] + .... + cell[7] + cell[8]
 
 '''
-
+from team46 import TEAM46
 import sys
 import random
 import signal
@@ -356,6 +356,8 @@ if __name__ == '__main__':
 		print '<option> can be 1 => Random player vs. Random player'
 		print '                2 => Human vs. Random Player'
 		print '                3 => Human vs. Human'
+		print '                4 => Bot vs. Bot'
+		print '                5 => Human vs. Bot'
 		sys.exit(1)
  
 	obj1 = ''
@@ -371,6 +373,12 @@ if __name__ == '__main__':
 	elif option == '3':
 		obj1 = Manual_Player()
 		obj2 = Manual_Player()
+	elif option == '4':
+		obj1 = TEAM46()
+		obj2 = TEAM46()
+	elif option == '5':
+		obj1 = Manual_Player()
+		obj2 = TEAM46()
 	else:
 		print 'Invalid option'
 		sys.exit(1)

@@ -34,7 +34,7 @@ class TEAM46:
         playerCount = 0
         patternHeur = 0
         for pos in array:
-			val = blockHeurs[pos[0]][pos[1]]
+            val = blockHeurs[pos[0]][pos[1]]
             #blockHeurs is the value/score of a block that we calculated in block_pattern_check
             patternHeur += val
             if val < 0:

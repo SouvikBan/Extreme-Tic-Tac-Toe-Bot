@@ -58,13 +58,13 @@ class TEAM46:
             if block[pos[0]][pos[1]] == flag:
                 flagCount += 1
                 #1/3 will have only cell contribution written in Block_heuristics
-			elif block[pos[0]][pos[1]] == self.oppFlag(flag):
+            elif block[pos[0]][pos[1]] == self.oppFlag(flag):
                 #if opponent's flag is present, discard
-				return 0
+                return 0
 		if flagCount == 2:
-			#2/3 of pattern complete. somepoints awarded for this
-			return somepoints #calculate somepoints 
-		return 0
+            #2/3 of pattern complete. somepoints awarded for this
+            return somepoints #calculate somepoints 
+        return 0
         # pass
 
 

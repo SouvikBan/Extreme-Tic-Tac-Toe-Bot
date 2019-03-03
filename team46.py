@@ -61,7 +61,7 @@ class TEAM46:
             elif block[pos[0]][pos[1]] == self.oppFlag(flag):
                 #if opponent's flag is present, discard
                 return 0
-		if flagCount == 2:
+        if flagCount == 2:
             #2/3 of pattern complete. somepoints awarded for this
             return somepoints #calculate somepoints 
         return 0

@@ -44,7 +44,7 @@ class TEAM46:
 				return 0
 		if flagCount == 2:
 			#ƒ2/3 of pattern complete. some points awarded for this
-			return somepoints
+			return somepoints #calculate somepoints 
 		return 0
         # pass
 

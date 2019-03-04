@@ -6,8 +6,13 @@ class TEAM46:
         self.boardHeuristics = {}                          
         self.blockHeuristics = {}
         self.who = 'MaxPlayer' #flag='x'
+<<<<<<< HEAD
+        self.blockWin = 20 #number of points if a block is won by us 
+        patterns = [] #winning patterns in block - will cotain position of flags in the winning pattern.
+=======
         self.blockPoints = 30 #number of points if a block is won by us
 		patterns = [] #winning patterns in block - will cotain position of flags in the winning pattern.
+>>>>>>> 1afaf63e32489d5733034d0da14d33b44a263096
 
         #vertical and horiz patterns
         for i in xrange(3):
@@ -20,10 +25,10 @@ class TEAM46:
 			patterns.append(tuple(col_array))
 
         #diagonal patterns
-		patterns.append(((0,0) , (1,1) , (2,2)))
-		patterns.append(((0,2) , (1,1) , (2,0)))
-
-		self.patterns = tuple(patterns)
+        patterns.append(((0,0) , (1,1) , (2,2)))
+        patterns.append(((0,2) , (1,1) , (2,0)))
+        
+        self.patterns = tuple(patterns)
 
     def oppFlag(self, flag):
 		# NOT operation on flag
@@ -55,6 +60,17 @@ class TEAM46:
         #array - every winning pattern in patterns[]
         flagCount = 0
         for pos in array:
+<<<<<<< HEAD
+			if block[pos[0]][pos[1]] == flag:
+				flagCount += 1
+            #1/3 will have only cell contribution written in Block_heuristics
+			elif block[pos[0]][pos[1]] == self.oppFlag(flag):
+                #if opponent's flag is present, discard
+				return 0
+        if flagCount == 2:
+			#ƒ2/3 of pattern complete. some points awarded for this
+			return somepoints #calculate somepoints 
+=======
             if block[pos[0]][pos[1]] == flag:
                 flagCount += 1
                 #1/3 will have only cell contribution written in Block_heuristics
@@ -64,6 +80,7 @@ class TEAM46:
         if flagCount == 2:
             #2/3 of pattern complete. somepoints awarded for this
             return somepoints #calculate somepoints 
+>>>>>>> 1afaf63e32489d5733034d0da14d33b44a263096
         return 0
         # pass
 
@@ -122,5 +139,5 @@ class TEAM46:
    
     def Move(self,board, old_move, flag):
 
-        
+
     
